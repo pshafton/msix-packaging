@@ -62,6 +62,10 @@ namespace MSIX {
                 {
                     ThrowHrIfFailed(AddPackageReference(utf8_to_wstring(file.second).c_str(), stream.Get(), false));
                 }
+                else
+                {
+                    ThrowHrIfFailed(AddPayloadPackage(utf8_to_wstring(file.second).c_str(), stream.Get(), false));
+                }
             }
         }
 
@@ -91,6 +95,10 @@ namespace MSIX {
                 if (flatBundle)
                 {
                     ThrowHrIfFailed(AddPackageReference(utf8_to_wstring(outputPath).c_str(), stream.Get(), false));
+                }
+                else
+                {
+                    ThrowHrIfFailed(AddPayloadPackage(utf8_to_wstring(outputPath).c_str(), stream.Get(), false));
                 }
             }
         }
